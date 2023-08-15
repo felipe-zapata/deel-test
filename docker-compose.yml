@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  backend: 
+    image: node:20-alpine
+    command: sh -c "npm install && npm start"
+    ports:
+      - 127.0.0.1:3001:3001
+    working_dir: /backend
+    volumes:
+      - ./backend/:/backend
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - HOST=
