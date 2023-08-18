@@ -26,9 +26,9 @@
 
 Before going any deeper on implementing concurrency solutions I would define requirements and current state of the service. Would use a load and performance testing tool like Apache JMeter.
 
-Thinking about concurrency, in this case SQLite implements (serializable isolation)[(https://www.sqlite.org/isolation.html)] and sequelize use the isolation level of the (database)[https://sequelize.org/docs/v6/other-topics/transactions/#isolation-levels], locking the tables and rows that are being used while the transaction happens.
+Thinking about concurrency, in this case SQLite implements [serializable isolation](https://www.sqlite.org/isolation.html) and sequelize use the isolation level of the [database](https://sequelize.org/docs/v6/other-topics/transactions/#isolation-levels), locking the tables and rows that are being used while the transaction happens.
 
 To increase the concurrency capabilities we could:
 - Use a different isolation level (read commited for example)
 - Check if the database is a bottleneck
-- Use (optimistic locking)[https://sequelize.org/docs/v6/other-topics/optimistic-locking/]
+- Use [optimistic locking](https://sequelize.org/docs/v6/other-topics/optimistic-locking/)
